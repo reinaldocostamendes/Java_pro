@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:form id="menuPrincipal">
+	<b:navBar brand="Menu" brandHref="home.jsf" fluid="true" fixed="top" sticky="true">
+		<b:navbarLinks>
+		<b:navCommandLink
+			rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}"
+			action="primeirapagina" value="Administração" />
+		<b:navCommandLink action="lancamento" value="Lançamentos" />
+	
+		<b:dropMenu value="Relatorios">
+		<b:navCommandLink value="Rel. Nota" action="rellancamento"/>
+		<b:navCommandLink value="Rel. Usuario" action="relusuario"/>
+		</b:dropMenu>
+		<b:navCommandLink action="#{pessoaBean.deslogar}" value="Trocar de Usuario" />
+			<b:navCommandLink action="#{pessoaBean.deslogar}" value="Sair" />
+		</b:navbarLinks>
+	</b:navBar>
+	<h:graphicImage height="80" width="100%"
+			value="/resources/img/back_lnkd.jpg" />
+</h:form>
+</html>

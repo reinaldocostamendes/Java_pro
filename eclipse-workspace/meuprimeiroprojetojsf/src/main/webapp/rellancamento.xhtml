@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<title>Lançamentos</title>
+	<link href="resources/stylo.css" rel="stylesheet"></link>
+</h:head>
+<h:body>
+	<ui:include src="/menu.xhtml" />
+	<b:form id="formLancamento">
+		<b:messages id="msg" />
+		<b:panel>
+		<b:panelGrid columns="4">
+		
+			<b:column>
+				<h:outputLabel value="Data Inicial:" />
+				<b:datepicker locale="pt" value="#{relLancamento.dataIni}" />
+			</b:column>
+			<b:column>
+				<h:outputLabel value="Data Final:" />
+				<b:datepicker locale="pt" value="#{relLancamento.dataFim}" />
+			</b:column>
+			<b:column>
+				<h:outputLabel value="Nota:" />
+				<b:inputText value="#{relLancamento.numNota}" />
+			</b:column>
+			<b:column>
+			<h:outputLabel/>
+				<b:commandButton style="margin-right:20px;margin-top:25px;" value=" Buscar"
+					action="#{relLancamento.buscarLancamento}" look="primary" />
+			</b:column>
+			
+		</b:panelGrid>
+</b:panel>
+
+	</b:form>
+	<br />
+	<br />
+	<b:form>
+		<b:dataTable value="#{relLancamento.lancamentos}" var="lanc"
+			border="3" pdf="true" excel="true" csv="true" print="true" column-visibility="true">
+			
+			<b:dataTableColumn value="#{lanc.id}" />
+			<b:dataTableColumn value="#{lanc.numeroNotaFiscal}" label="Nota" />
+			<b:dataTableColumn value="#{lanc.empresaOrigem}" label="Origem" />
+			<b:dataTableColumn value="#{lanc.empresaDestino}" label="Destino" />
+			<b:dataTableColumn value="#{lanc.usuario.nome}" label="Usuario" />
+			<b:dataTableColumn value="#{lanc.dataIni}" label="Inicial" />
+			<b:dataTableColumn value="#{lanc.dataFin}" label="Final" />
+			
+		</b:dataTable>
+	</b:form>
+	<link href="resources/stylo.css" rel="stylesheet"></link>
+</h:body>
+</html>

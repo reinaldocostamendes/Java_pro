@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<title>Login</title>
+		<link href="resources/stylo.css" rel="stylesheet"></link>
+</h:head>
+<h:body>
+<b:form id="formLogin" style="margin-top:12%; text-align:center;">
+<h2>Faça Autenticação</h2>
+<b:messages autoUpdate="true" id="msg"/>
+<b:panelGrid columns="1"  style="width:280px; display:inline-block;text-align:left;">
+
+<b:panel>
+<b:column>
+<h:outputLabel value="Login: "/>
+<b:inputText id="Login" value="#{pessoaBean.pessoa.login}" required="true" requiredMessage="Informe o login"/>
+</b:column>
+<b:column>
+<h:outputLabel value="Senha: "/>
+<b:inputSecret id="Senha" value="#{pessoaBean.pessoa.senha}" required="true" requiredMessage="Informe a senha"/>
+</b:column>
+<b:column>
+<b:commandButton value="Entrar" action="#{pessoaBean.logar}" style="width:100%;" look="primary"/>
+</b:column>
+</b:panel>
+
+
+</b:panelGrid>
+</b:form>
+<link href="resources/stylo.css" rel="stylesheet"></link>
+</h:body>
+</html>

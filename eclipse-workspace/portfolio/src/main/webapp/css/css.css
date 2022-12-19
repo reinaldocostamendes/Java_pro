@@ -1,0 +1,228 @@
+body{
+	background:#202121;
+	
+	text-align:left;
+	
+}
+#home .foto_perfil{
+	width:100%;
+	padding:8px;
+	/*border-radius:50%;
+	border:solid #FFBF00 4px;*/
+	text-align:center;
+	background:#202121;
+	background:#fff;
+	opacity:0.8;
+	border-radius:15px;
+	padding-bottom:25px;
+	margin-bottom:20px;
+}
+.foto_perfil img{
+	width:98%;
+	height:auto;
+	border-radius:50%;
+}
+#home .container-fluid .row{
+	background:inherit;	
+}
+#home .intro{
+	width:100%;
+	height:auto;
+	padding-top:8px;
+	padding-left:18px;
+	padding-right:18px;
+	padding-bottom:45px;
+	/*background:red;
+	margin-top:40px;*/
+	background:#202121;
+	background:#fff;
+	color:#CCC;
+	opacity:0.95;
+	border-radius:15px;
+}
+#home .intro:hover, #home .foto_perfil:hover, .borda:hover{
+	background:#5F4C0B;
+	opacity:0.8;
+	border-bottom:4px solid #CCC;
+	
+}
+.intro h3, .interesse{
+	text-transform: none;
+	text-align:left;
+}
+#logo{
+	height:49px;
+}
+#logo img{
+	height:49px;
+	width:90px;
+	margin-top:-10px;
+}
+.bg-tempo, .modal-body{
+				/*background:url("img/map-image.png");
+				background-size:cover;
+				background-repeat:none;*/
+				}
+.navbar{
+color:white;	
+}
+.navbar-nav  {
+	width:100%;
+	text-align
+	background:black;
+}
+.navbar-nav .nav-item{
+	display:inline-table;
+	width:auto;
+	max-width:190px;
+}
+.navbar  .collapse .navbar-nav .nav-item .nav-link, .dropdown-item,.w3-button{
+	color:white;
+	font-size:16px;
+	margin-right:14px;
+	width:auto;
+}
+.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id1,.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id2,.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id3{
+	width:520px;
+	width:100%;
+	max-width:100%;
+	border-top:2px solid #CCC;
+	border-right:2px solid #CCC;
+	margin-top:50px;
+}
+  #drop_mn_id1, #drop_mn_id2, #drop_mn_id3{
+	width:520px;
+	width:100%;
+	max-width:100%;
+	border-top:2px solid #CCC;
+	border-right:2px solid #CCC;
+	margin-top:50px;
+	 text-align:left;
+}
+.bg-light-gray{
+	margin-top:5px;
+	margin-bottom:5px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+#menu_principal{
+	background:black;
+	top:0px;
+	margin-top:-20px;
+	padding:20px;
+}
+.dropdown-menu .dropdown-item{
+	width:100%;
+	margin-top:8px;
+	margin-left:8px;
+	display:inline-table;
+}
+.dropdown-menu{
+	background:black;
+	color:white;
+}
+.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id1 .drop_mn,.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id2.drop_mn,.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id3 .drop_mn {
+ width:150px;
+	max-width:100%;
+	display:inline-table;
+	float:left;
+	margin-right:10px;
+	border-left:2px solid #CCC;
+		padding-left:2px;
+	padding-right:2px;
+	 text-align:left;
+}
+ #drop_mn_id1 .drop_mn .w3-button, #drop_mn_id2 .drop_mn .w3-button, #drop_mn_id3 .drop_mn .w3-button{
+	 max-width:150px;
+	  float:left;
+	 }
+	 #drop_mn_id1 .titulo, #drop_mn_id2 .titulo, #drop_mn_id3 .titulo{
+		 color:white;
+		 text-align:center;
+		 font-weight:bolder;
+		 background:#df7401;
+		 height:35px;
+		 padding:5px;
+		 }
+.drop_mn h5{
+	padding:5px;
+	border-bottom:2px solid #CCC;
+}
+.drop_mn{
+	color:white;
+}
+nav{
+height:60px;
+}
+.navbar .navbar-nav .w3-button{
+	color:white;
+	float:left;
+	margin-left:20px;
+}
+.navbar .navbar-nav #drop_titulo1{
+	margin-top:5px;
+}
+.section-heading{
+	padding-top:75px;
+	
+}
+.borda{
+	border-top:2px solid #CCC;
+	padding-left:40px;
+	padding-right:40px;
+	background:#204122;
+	background:#fff;
+	opacity:0.9;
+	color:white;
+	color:#CCC;
+	text-align:left;
+	margin-bottom:20px;
+}
+.row .modal-body{
+	color:#ff8000;
+	text-align:left;
+	opacity:0.9;
+	color:#CCC;
+}
+.row .portfolio-caption .text-muted_{
+	color:#CCC;
+}
+section .row .col-md-4 .text-muted_{
+	color:white;
+	text-align:left;
+	color:#CCC;
+}
+section .row{
+background:#202121;
+padding-left:40px;
+	padding-right:40px;
+background:#fff;
+	color:white;
+	color:#CCC;
+	opacity:0.9;
+}
+#projectos, #cv, #sobremin, #api_tempo,#interesse{
+	color:#CCC;
+	opacity:0.9;
+}
+#sobremin p{
+	text-align:left;
+}
+#projectos, #cv, #sobremin, #api_tempo,#interesse, body{
+background:#fff;
+color:black;
+}
+#contact .row h3{
+	color:#CCC;
+	text-transform:none;
+}
+@media(max-width: 600px){
+.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id1,.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id2,.navbar .navbar-nav .w3-container .w3-dropdown-hover  #drop_mn_id3{
+	/*width:180px;*/
+	width:100%;
+	max-width:100%;
+	border-top:2px solid #CCC;
+	border-right:2px solid #CCC;
+	margin-top:50px;
+}	
+}

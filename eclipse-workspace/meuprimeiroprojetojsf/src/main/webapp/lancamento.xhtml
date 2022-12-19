@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<title>Lançamentos</title>
+		<link href="resources/stylo.css" rel="stylesheet"></link>
+</h:head>
+<h:body>
+	<ui:include src="/menu.xhtml" />
+	<b:form id="formLancamento">
+		<b:messages id="msg" />
+		<b:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputText value="Lançamentos" />
+			</f:facet>
+			<b:panel>
+				<b:column>
+					<h:outputLabel value="ID:" />
+					<b:inputText value="#{lancamentoBean.lancamento.id}"
+						readonly="true" />
+				</b:column>
+				<b:column>
+					<h:outputLabel value="Nota:" />
+					<b:inputText value="#{lancamentoBean.lancamento.numeroNotaFiscal}"
+						required="true" requiredMessage="Informe o numero da Nota!" />
+				</b:column>
+				<b:column>
+				<h:outputLabel value="Dat. Inic.:"/>
+				<b:datepicker locale="pt" required="true" requiredMessage="Data inicial obrigatorio" value="#{lancamentoBean.lancamento.dataIni}"/>
+				</b:column>
+				
+			</b:panel>
+			<b:panel>
+				<b:column>
+					<h:outputLabel value="Emp. Origem:" />
+					<b:inputText value="#{lancamentoBean.lancamento.empresaOrigem}"
+						required="true" requiredMessage="Informa a origem!" />
+				</b:column>
+				<b:column>
+					<h:outputLabel value="Emp. Destino:" />
+					<b:inputText value="#{lancamentoBean.lancamento.empresaDestino}"
+						required="true" requiredMessage="Informe Destino!" />
+				</b:column>
+			<b:column>
+				<h:outputLabel value="Dat. Final:"/>
+				<b:datepicker locale="pt" required="true" requiredMessage="Data Final obrigatorio"  value="#{lancamentoBean.lancamento.dataFin}"/>
+				</b:column>
+			</b:panel>
+		</b:panelGrid>
+		
+			<b:column>
+					<h:outputLabel />
+					<h:panelGroup>
+						<h:commandButton style="margin-right:20px;" value=" Novo"
+							action="#{lancamentoBean.novo}"
+							image="/resources/img/new_add_user.png" title="Novo" />
+
+						<h:commandButton style="margin-right:20px;" value="Salvar"
+							action="#{lancamentoBean.salvar}"
+							image="/resources/img/Save_icon.png" title="Salavar" />
+
+						<h:commandButton
+							rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}"
+							style="margin-right:20px;" value="  Apagar"
+							action="#{lancamentoBean.remover}"
+							image="/resources/img/excluir.png" title="Apagar" />
+						<h:commandButton action="#{lancamentoBean.novo}"
+							style="margin-right:20px;" value="Limpar"
+							image="/resources/img/refresh.png" title="Limpar" />
+					</h:panelGroup>
+				</b:column>
+	</b:form>
+	<br/><br/>
+	<b:form>
+		<b:dataTable value="#{lancamentoBean.lancamentos}" var="lanc"
+			border="3" width="98%" style="margin-left:1%;margin-right:1%;" pdf="true" columnVisibility="true" excel="true" print="true">
+			
+			<b:dataTableColumn value="#{lanc.id}" label="Id"/>
+				
+			<b:dataTableColumn value="#{lanc.numeroNotaFiscal}" label="Nota"/>
+				
+			<b:dataTableColumn value="#{lanc.empresaOrigem}"  label="Origem"/>
+			
+			<b:dataTableColumn value="#{lanc.empresaDestino}" label="Destino"/>
+				
+				<b:dataTableColumn value="#{lanc.dataIni}" label="Data Inic."/>
+		
+				<b:dataTableColumn value="#{lanc.dataFin}" label="Data Fin."/>
+				
+			<b:dataTableColumn value="#{lanc.usuario.nome}" label="User"/>
+				
+			<b:dataTableColumn>
+				<f:facet name="header">Ação</f:facet>
+				<h:commandLink title="Editar" action="#{lancamentoBean.editar}">
+					<f:setPropertyActionListener target="#{lancamentoBean.lancamento}"
+						value="#{lanc}" />
+					<h:graphicImage style="margin-right:20px;"
+						value="/resources/img/editar.png" />
+				</h:commandLink>
+				<h:commandLink
+					rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}"
+					title="Eliminar" action="#{lancamentoBean.remover}">
+					<f:setPropertyActionListener target="#{lancamentoBean.lancamento}"
+						value="#{lanc}" />
+					<h:graphicImage value="/resources/img/excluir.png" />
+				</h:commandLink>
+			</b:dataTableColumn>
+		</b:dataTable>
+	</b:form>
+	<link href="resources/stylo.css" rel="stylesheet"></link>
+</h:body>
+</html>
